@@ -1,0 +1,9 @@
+contact_us_library:
+  version: 1.x
+  css:
+    base:
+      css/contact_us.css: {}
+  js:
+    js/contact_us.js: {}
+  dependencies:
+    - core/jquery

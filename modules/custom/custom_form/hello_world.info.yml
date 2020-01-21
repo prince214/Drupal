@@ -1,0 +1,5 @@
+name: Hello world
+description: A Custom module to store detail information about employee.
+core: 8.x
+package: Custom
+type: module

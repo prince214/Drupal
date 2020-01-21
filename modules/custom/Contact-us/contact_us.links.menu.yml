@@ -1,0 +1,13 @@
+entity.contact_us.admin:
+  title: 'Contact Us Configuration Form'
+  route_name: contact_us.admin_settings
+  description: 'Contact us configuration setting form'
+  parent: system.admin_config_services
+  weight: 100
+
+system.contact_us.admin:
+  title: 'Contact Us'
+  route_name: contact_us.admin_collection
+  description: 'Contact us configuration setting form'
+  parent: system.admin_content
+  weight: 100  

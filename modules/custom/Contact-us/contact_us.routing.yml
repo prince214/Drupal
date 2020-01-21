@@ -1,0 +1,31 @@
+contact_us.form:
+ path: '/contact-us-form'
+ defaults:
+   _form: '\Drupal\contact_us\Form\ContactUsForm'
+ requirements:
+   _permission: 'access content'
+
+contact_us.admin_settings:
+  path: '/admin/config/contact_us'
+  defaults:
+    _form: '\Drupal\contact_us\Form\SettingsForm'
+    _title: 'Contact Us configuration'
+  requirements:
+    _permission: 'administer site configuration'
+
+
+contact_us.admin_collection:
+  path: '/admin/content/contact-us'
+  defaults:
+    _controller: '\Drupal\contact_us\Controller\ContactUsController::display'
+    _title: 'Contact Us Form Content'
+  requirements:
+    _permission: 'administer content types'
+
+
+contact_us.description:
+  path: '/contact_us/addQuery'
+  defaults:
+    _controller: '\Drupal\contact_us\Controller\ContactUsController::addQuery'
+  requirements:
+    _permission: 'access content'    

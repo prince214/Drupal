@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema()
+ *
+ * @ingroup contact_us
+ */
+function contact_us_schema() {
+  $schema['contact_us'] = [
+    'description' => 'Stores query of user for an expert.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique identification ID.',
+      ],
+      'uid' => [
+        'type' => 'int',
+        'not null' => FALSE,
+        'default' => 0,
+        'description' => "Creator user's {users}.uid",
+      ],
+      'name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+        'default' => '',
+        'description' => 'Name of the person.',
+      ],
+      'phone' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+        'default' => '',
+        'description' => 'Phone no. of the person.',
+      ],
+      'email' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+        'default' => '',
+        'description' => 'Email of the person.',
+      ],
+      'message' => [
+        'type' => 'text',
+        'not null' => FALSE,
+        'size' => 'big',
+        'description' => 'Message by person.',
+      ],    
+    'salesperson_contact' => [
+        'type' => 'int',
+        'not null' => FALSE,
+        'default' => 0,
+        'description' => "salesperson_contact",
+       ],
+      ],       
+    'primary key' => ['id'],
+    'indexes' => [
+      'name' => ['name'],
+    ], 
+  ];
+
+  return $schema;
+}
+/**
+ * Implements hook_uninstall().
+ */
+function contact_us_uninstall() {
+$connection = \Drupal::database();
+ return $connection->schema()->dropTable('contact_us');
+} 

@@ -1,0 +1,23 @@
+<?php
+
+function contact_us_theme() {
+  return [
+    'contact_us_form' => [
+      'render element' => 'form',
+    ],
+  ];
+}
+
+function contact_us_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'contact_us/contact_us_library';
+}
+
+function contact_us_preprocess(&$variables, $hook) {
+
+  $module_handler = Drupal::service('module_handler');
+  $path = $module_handler->getModule('contact_us')->getPath();
+    $variables['module_path'] = $path;
+    $variables['http_host'] = $_SERVER['HTTP_HOST'];
+
+}    
+

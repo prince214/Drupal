@@ -1,0 +1,23 @@
+hello.form:
+ path: '/hello/details'
+ defaults:
+   _title: 'Application form'
+   _form: '\Drupal\hello_world\Form\HelloForm'
+ requirements:
+   _permission: 'access content'
+ 
+hello.thankyou:
+ path: '/hello/details/thankyou'
+ defaults:
+   _title: 'Thank You Page'
+   _controller: '\Drupal\hello_world\Controller\ThankyouController::successpage'
+ requirements:
+   _permission: 'access content'
+ 
+hello.getdetails:
+ path: '/hello/getdetails'
+ defaults:
+   _title: 'Fetch detail of Employee'
+   _controller: '\Drupal\hello_world\Controller\ThankyouController::getDetails'
+ requirements:
+   _permission: 'access content'

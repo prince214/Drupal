@@ -1,0 +1,18 @@
+name: Mytheme
+type: theme
+description: 'Mytheme Test theme'
+libraries:
+  - 'mytheme/global-css'
+
+regions:
+  header: Header
+  mythememenu: Navigation
+  content: Content
+  sidebar_first: Sidebar First
+  footer: Footer
+  page_top: Page top
+  page_bottom: Page bottom
+
+version: '8.x-1.0-rc1'
+core: '8.x'
+# project: 'test'
